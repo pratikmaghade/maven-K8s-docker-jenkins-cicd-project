@@ -14,6 +14,49 @@ Let's create a sample Java project that will be built using Maven, packaged into
 
 ### Step-by-Step Guide
 
+### Installation and Configurations
+1) Launch and Connect | EC2 | t2 medium | amazon linux 2023
+Region | ap-south-1
+
+```
+// update machine
+sudo yum update -y
+// install python
+// install java
+sudo yum install jre
+java --version
+// install maven
+sudo yum install maven -y
+sudo yum install python -y
+// install git
+sudo yum install git -y
+// configure git
+git config --global user.name atulkamble
+git config --global user.email "atul_kamble@hotmail.com"
+// clone git project repo
+git clone https://github.com/atulkamble/DevOpsProject.git
+cd DevOpsProject
+pwd
+ls
+// install docker
+```
+sudo yum install docker
+```
+```
+sudo docker login
+sudo systemctl start docker.service
+```
+// install minikube
+```
+curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-latest.x86_64.rpm
+sudo rpm -Uvh minikube-latest.x86_64.rpm
+```
+```
+start minikube
+```
+
+
+
 #### 1. Create a Maven Project
 Create a simple Java web application with Maven.
 
