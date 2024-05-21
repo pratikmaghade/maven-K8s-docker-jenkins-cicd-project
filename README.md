@@ -40,6 +40,7 @@ pwd
 ls
 // install docker
 sudo yum install docker
+sudo usermod -aG docker $USER && newgrp docker
 sudo docker login
 sudo systemctl start docker.service
 // install minikube
