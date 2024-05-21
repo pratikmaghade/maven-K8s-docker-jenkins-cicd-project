@@ -39,19 +39,12 @@ cd DevOpsProject
 pwd
 ls
 // install docker
-```
 sudo yum install docker
-```
-```
 sudo docker login
 sudo systemctl start docker.service
-```
 // install minikube
-```
 curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-latest.x86_64.rpm
 sudo rpm -Uvh minikube-latest.x86_64.rpm
-```
-```
 start minikube
 ```
 
