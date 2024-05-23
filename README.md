@@ -267,6 +267,12 @@ spec:
     nodePort: 30007
 ```
 
+commands
+touch Dockerfile
+sudo nano Dockerfile
+touch k8s-deployment.yml
+sudo nano k8s-deployment.yml
+
 #### 4. Jenkins Setup
 1. **Install Plugins**: Install necessary plugins like Docker, Maven, Kubernetes, and Ansible in Jenkins.
 2. **Create a Jenkins Pipeline**: Create a Jenkins pipeline to automate the build, Dockerization, and deployment process.
