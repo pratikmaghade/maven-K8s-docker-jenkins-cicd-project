@@ -42,11 +42,27 @@ ls
 sudo yum install docker
 sudo usermod -aG docker $USER && newgrp docker
 sudo docker login
+
+sudo systemctl status docker.service
 sudo systemctl start docker.service
+sudo systemctl enable docker.service
+
+// installation of kubectl
+curl -O https://s3.us-west-2.amazonaws.com/amazon-eks/1.29.3/2024-04-19/bin/linux/amd64/kubectl
+chmod +x ./kubectl
+mkdir -p $HOME/bin && cp ./kubectl $HOME/bin/kubectl && export PATH=$HOME/bin:$PATH
+echo 'export PATH=$HOME/bin:$PATH' >> ~/.bashrc
+kubectl version --client
+
 // install minikube
 curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-latest.x86_64.rpm
 sudo rpm -Uvh minikube-latest.x86_64.rpm
-minikube start 
+
+
+minikube start
+minikube addons storage-provisioner
+minikube addons enable storage-provisioner
+minikube addons enable default-storageclass
 ```
 
 
