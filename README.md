@@ -270,6 +270,9 @@ spec:
 commands
 touch Dockerfile
 sudo nano Dockerfile
+docker build -t atuljkamble/devopsproject .
+sudo docker images
+sudo docker push atuljkamble/devopsproject
 touch k8s-deployment.yml
 sudo nano k8s-deployment.yml
 
