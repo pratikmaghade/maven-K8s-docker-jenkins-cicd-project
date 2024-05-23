@@ -199,6 +199,16 @@ Your `pom.xml` should look like this:
 </project>
 ```
 
+Run following commands 
+```
+mvn build
+mvn compile
+mvn test
+mvn package
+mvn verify
+mvn install
+```
+
 ### Summary
 
 By ensuring the `web.xml` file exists in the correct directory and populating it with the required content, you can resolve the error and successfully package your Maven web application into a WAR file. Then, you can deploy the WAR file to a servlet container like Apache Tomcat.
