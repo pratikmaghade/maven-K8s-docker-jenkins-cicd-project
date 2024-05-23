@@ -105,6 +105,104 @@ Create a simple Java web application with Maven.
 </html>
 ```
 
+Solution for mvn build error
+
+The error message indicates that the Maven WAR plugin requires a `web.xml` file to be present in the `src/main/webapp/WEB-INF` directory, but it cannot find it. Here's how to solve this issue step by step:
+
+### Step-by-Step Solution
+
+1. **Create the `WEB-INF` Directory**:
+   - Ensure that the `WEB-INF` directory exists under `src/main/webapp`:
+     ```sh
+     mkdir -p src/main/webapp/WEB-INF
+     ```
+
+2. **Create the `web.xml` File**:
+   - Create a `web.xml` file in the `src/main/webapp/WEB-INF` directory. This file is required for a proper web application deployment descriptor.
+     ```sh
+     touch src/main/webapp/WEB-INF/web.xml
+     ```
+
+3. **Populate the `web.xml` File**:
+   - Add the necessary content to the `web.xml` file. Here is a basic example of a `web.xml` configuration:
+     ```xml
+     <?xml version="1.0" encoding="UTF-8"?>
+     <web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+              version="3.1">
+         <display-name>simple-webapp</display-name>
+         <welcome-file-list>
+             <welcome-file>index.jsp</welcome-file>
+         </welcome-file-list>
+     </web-app>
+     ```
+
+4. **Ensure `index.jsp` Exists**:
+   - Make sure the `index.jsp` file exists in the `src/main/webapp` directory. You can create it as follows:
+     ```sh
+     touch src/main/webapp/index.jsp
+     ```
+
+   - Add content to the `index.jsp` file:
+     ```jsp
+     <html>
+     <body>
+         <h2>Hello, World!</h2>
+     </body>
+     </html>
+     ```
+
+5. **Re-run Maven Package Command**:
+   - Now, run the Maven package command again to compile and package the WAR file:
+     ```sh
+     mvn package
+     ```
+
+### Complete Example Directory Structure
+
+Ensure your directory structure looks like this:
+
+```
+simple-webapp
+├── pom.xml
+└── src
+    └── main
+        └── webapp
+            ├── WEB-INF
+            │   └── web.xml
+            └── index.jsp
+```
+
+### `pom.xml` File
+
+Your `pom.xml` should look like this:
+
+```xml
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.example</groupId>
+    <artifactId>simple-webapp</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>war</packaging>
+    <build>
+        <finalName>simple-webapp</finalName>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-war-plugin</artifactId>
+                <version>3.3.1</version>
+            </plugin>
+        </plugins>
+    </build>
+</project>
+```
+
+### Summary
+
+By ensuring the `web.xml` file exists in the correct directory and populating it with the required content, you can resolve the error and successfully package your Maven web application into a WAR file. Then, you can deploy the WAR file to a servlet container like Apache Tomcat.
+
 #### 2. Dockerize the Application
 Create a Dockerfile to containerize the web application.
 
