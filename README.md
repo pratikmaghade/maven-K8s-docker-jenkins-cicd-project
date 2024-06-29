@@ -276,9 +276,9 @@ commands
 ```
 touch Dockerfile
 sudo nano Dockerfile
-docker build -t atuljkamble/devopsproject .
+docker build -t pratikmaghde/devopsproject .
 sudo docker images
-sudo docker push atuljkamble/devopsproject
+sudo docker push pratikmagahde/devopsproject
 touch k8s-deployment.yml
 sudo nano k8s-deployment.yml
 ```
