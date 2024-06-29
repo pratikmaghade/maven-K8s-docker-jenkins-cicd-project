@@ -32,9 +32,9 @@ sudo yum install python -y
 sudo yum install git -y
 // configure git
 git config --global user.name atulkamble
-git config --global user.email "atul_kamble@hotmail.com"
+git config --global user.email pratikmaghadee@gmail.com"
 // clone git project repo
-git clone https://github.com/atulkamble/DevOpsProject.git
+git clone https://github.com/pratikmaghade/DevOpsProject.git
 cd DevOpsProject
 pwd
 ls
