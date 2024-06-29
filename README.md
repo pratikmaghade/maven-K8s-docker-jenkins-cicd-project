@@ -297,7 +297,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git 'https://github.com/your-repo/simple-webapp.git'
+                git 'https://github.com/pratikmaghade/maven-K8s-docker-jenkins-cicd-project.git'
             }
         }
 
